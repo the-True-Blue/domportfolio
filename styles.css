@@ -53,6 +53,9 @@ header {
   align-items: center;
   z-index: 2;
 }
+#menu{
+  margin-right: 30px;
+}
 
 .logo {
   width: 400px;
@@ -723,6 +726,10 @@ transform: rotate(0deg)
 .icons a:after {
   display: none;
 }
+.icons button{
+  background: transparent;
+  border: 0;
+}
 .icons a {
   color: inherit;
 }
@@ -820,6 +827,14 @@ transform: rotate(0deg)
   background: transparent;
   margin: 0 0.5rem;
   cursor: pointer;
+}
+@media screen and (min-width: 900px){
+  .btns{
+
+    font-size: 1.4rem;
+    width: 190px;
+
+  }
 }
 .btn.btn-pink{
   background: #00d9ff;
@@ -1180,4 +1195,30 @@ a:after {
   background-color: transparent;
   border: 0;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .section-1-img .img {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .navi{
+    display: none;
+  }
+  .spazio{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .logo{
+    width: 450px;
+  }
+}
+
+.animate__animated.animate__fadeInDown {
+  --animate-duration: 2s;
 }

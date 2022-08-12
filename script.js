@@ -117,6 +117,16 @@ $(document).ready(function () {
     $('.popup').fadeOut();
     $('body').removeClass('overflow-hidden');
   });
+
+  $('#open-contact').on('click', function(){
+    $('#contact-holder').fadeIn();
+    $('body').addClass('overflow-hidden');
+  });
+
+  $('.go-back').on('click', function(){
+    $('.popup').fadeOut();
+    $('body').removeClass('overflow-hidden');
+  });
 });
 
 function scrollToBottom() {

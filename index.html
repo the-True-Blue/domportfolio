@@ -38,7 +38,7 @@
     />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-
+    <link rel="stylesheet" href="./header.css" type="text/css">
   
   </head>
 
@@ -52,6 +52,22 @@
               <i class="fa-solid fa-gamepad fa-3x fa-bounce"></i>
               <p>Designing Games</p>
             </div>
+            
+            <p class="menua cta" onclick="disableScroll()" id="menu">Menu</p>
+            <div id="mobile__menu"  class="overlay">
+              <a class="close">&times;</a>
+              <div class="overlay__content" >
+      
+                <!-- add link /.. -->
+                  <a href="/" id="progetti" class="animate__animated animate__fadeInDown">About</a>
+                  <a href="/" id="progetti1" class="animate__animated animate__fadeInDown">Contact</a>
+                  <h3 id="progetti2" onclick='ApriProgetti()' class="animate__animated animate__fadeInDown">Progetti</h3>
+                  <img onclick="ChiudiProgetti()" class="animate__animated animate__fadeInDown" id="arrow-back-project" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAM9JREFUSEvtlt0NgzAMhH0bdARG6yjtJC2bwEbd4CqjIKEQsEXd5CWWUB5w8sUn/wTSyNCIKx1cTfku9SI1yYcuIjIDmCz9Sd4AfCy/7f+i1CQVqvYEoJc4NJJ3ERksv/yAn8AJ+vJcMAy8gbqUCQFn0DrgAvT/4AOogt/pKyYhgPmy1CdQs4oA7JLYndXNwKmxaM1q+eQ2GlLvmpA74pXUJLlO4GaHu5xc+cYmDaQQeb2IM3jYkFgn0lR1LJodIcChP30CRPQd0aX26RTg9QULMp0f9nnE7gAAAABJRU5ErkJggg=="/>
+                  <a href="/" id="progetti4" class="animate__animated animate__backInLeft">Animated Sonic Comic</a>
+                  <a href="/" id="progetti5" class="animate__animated animate__backInRight" >Starry Night</a>
+              </div>
+          </div>
+
           </header>
           <video autoplay="" muted="" loop="" class="mtz-vlc-cnlog">
             <source src= "https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Home%20Page/welcome.mp4" type="video/mp4">
@@ -366,7 +382,7 @@
           </div>
 
           <ul class = "icons">
-            <li><i class = "fa fa-envelope"></i></li>
+            <button type="button" id="open-contact"><li> <i class = "fa fa-envelope"></i></li></button>
             <li><a href="https://github.com/stars/the-True-Blue/lists/my-projects-and-collaborations"> <i class = "fa brands fa-github"></i></a></li>
             <li> <a href="https://www.linkedin.com/in/dominique-mccormack-4213791b7/"> <i class = "fab fa-linkedin"></i></a></li>
             <li> <a href="https://itch.io/profile/the-true-blue"><i class = "fab fa-itch-io"></i></a></li>
@@ -410,10 +426,15 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="./script.js"></script>
+    <script type="text/javascript" src="./mobile.JS"></script>
 
     <div id="resume-holder" class="popup">
       <button class="go-back"><i class="fa-solid fa-circle-arrow-right"></i></button>
       <iframe src="Resume/resume.html"></iframe>
+    </div>
+    <div id="contact-holder" class="popup popup-fullscreen">
+      <button class="go-back"><i class="fa-solid fa-circle-arrow-right"></i></button>
+      <iframe src="Contact/contact.html"></iframe>
     </div>
   </body>
 </html>
