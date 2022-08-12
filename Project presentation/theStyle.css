@@ -1,0 +1,470 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: url(https://64.media.tumblr.com/6fa9ad9f859cf058bfe19a2536b0aa11/tumblr_pkv647vWBM1xp1j77o1_540.gifv);
+  background-size: cover;
+  color: white;
+  display: inline-block;
+}
+.title {
+  position: absolute;
+  top: 30px;
+  left: 75%;
+  opacity: 80%;
+}
+.star {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.glow {
+  animation: glitter 10s infinite;
+}
+.star1 {
+  position: absolute;
+  top: 80px;
+  left: 460px;
+  animation-delay: -2s;
+}
+
+.star2 {
+  position: absolute;
+  top: 180px;
+  left: 550px;
+  animation-delay: -1.7s;
+}
+.star3 {
+  position: absolute;
+  top: 300px;
+  left: 565px;
+  animation-delay: -1.4s;
+}
+.star4 {
+  position: absolute;
+  top: 410px;
+  left: 580px;
+  animation-delay: -1.1s;
+}
+.star5 {
+  position: absolute;
+  top: 520px;
+  left: 475px;
+  animation-delay: -0.8s;
+}
+.star6 {
+  position: absolute;
+  top: 660px;
+  left: 595px;
+  animation-delay: -0.5s;
+}
+.star7 {
+  position: absolute;
+  top: 590px;
+  left: 740px;
+  animation-delay: -0.2s;
+}
+
+audio {
+  right: 0px;
+  bottom: 0px;
+  position: fixed;
+  width: 15px;
+  height: 18px;
+}
+
+/*
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+  background-color: #ffffff00;
+  color: #ffffff00;
+}
+*/
+
+a.star img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  }
+
+a.star.glow{
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.text-block {
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+  position: absolute;
+  bottom: -10%;
+  left: 250px;
+  right: 250px;
+  background-color: black;
+  color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.Galloway {
+  padding-right: 20px;
+  margin-left: 2%;
+  float: left;
+  width: 200px;
+}
+
+.container1 {
+  width: 100%;
+  height: auto;
+  padding: 1%;
+}
+
+.Wattenberg {
+  padding-right: 20px;
+  margin-left: 2%;
+  float: left;
+  width: 200px;
+}
+
+.container2 {
+  width: 100%;
+  height: auto;
+  padding: 1%;
+}
+
+.Tribe {
+  padding-right: 20px;
+  margin-left: 2%;
+  float: left;
+  width: 200px;
+}
+
+.container3 {
+  width: 100%;
+  height: auto;
+  padding: 1%;
+}
+.container img {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  opacity: 80%;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  font-style: italic;
+}
+
+.container4 {
+  position: relative;
+}
+
+.text-block1 {
+  font-size: 20px;
+  font-style: italic;
+  position: absolute;
+  top: 150px;
+  left: 380px;
+  right: 0px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@keyframes glitter {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0px 0px 10px 5px #535fed;
+  }
+  25% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0px 0px 10px 5px #535fed;
+  }
+  75% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0px 0px 10px 5px #535fed;
+  }
+}
+
+.sky-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: -webkit-radial-gradient(center, #000046 0%, #000 60%);
+}
+body *:not(.sky-wrapper) {
+  z-index: 1;
+}
+body,
+html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: transparent;
+}
+
+.sky-wrapper ::after,
+.sky-wrapper ::before {
+  content: " ";
+  display: block;
+}
+
+.sky-wrapper ::after,
+.sky-wrapper ::before,
+.sky-wrapper .moon,
+.sky-wrapper .sky,
+.sky-wrapper .star,
+.sky-wrapper .asteroid {
+  position: absolute;
+}
+
+.sky-wrapper .moon {
+  color: #ffd;
+  background: radial-gradient(
+    circle at -30% 50%,
+    rgba(0, 0, 0, 0) 175px,
+    currentColor 100%
+  );
+  z-index: 999;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 20px currentColor);
+}
+
+.sky-wrapper .sky {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  animation: rotate 400s infinite linear;
+}
+
+.sky-wrapper .star {
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  border-radius: 50%;
+  animation: shine 800s infinite linear;
+}
+
+.sky-wrapper .star.scale1 {
+  transform: scale(1);
+}
+
+.sky-wrapper .star.scale2 {
+  transform: scale(0.5);
+}
+
+.sky-wrapper .star.scale3 {
+  transform: scale(1.3);
+}
+
+.sky-wrapper .star.animate1 {
+  animation-duration: 0.5s;
+}
+
+.sky-wrapper .star.animate2 {
+  animation-duration: 1s;
+}
+
+.sky-wrapper .star.animate3 {
+  animation-duration: 1.5s;
+}
+
+.sky-wrapper .star.animate4 {
+  animation-duration: 2s;
+}
+
+.sky-wrapper .star.opacity1 {
+  opacity: 1;
+}
+
+.sky-wrapper .star.opacity2 {
+  opacity: 0.5;
+}
+
+.sky-wrapper .star.opacity3 {
+  opacity: 0.2;
+}
+
+.sky-wrapper .asteroid {
+  top: -200px;
+  left: -200px;
+  width: 200px;
+  height: 200px;
+  opacity: 0.8;
+  animation-name: assteroid;
+  animation-timing-function: linease-inear;
+  animation-iteration-count: infinite;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+
+.sky-wrapper .asteroid:before {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0px 0px 7px 2px #fff;
+  -moz-box-shadow: 0px 0px 7px 2px #fff;
+  box-shadow: 0px 0px 7px 2px #fff;
+  bottom: 0;
+  right: 0;
+}
+
+.sky-wrapper .asteroid:after {
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-bottom: 200px solid #fff;
+  border-right: 3px solid transparent;
+  bottom: -22px;
+  right: 75px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-1deg);
+}
+
+@keyframes shine {
+  0% {
+    box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.05);
+  }
+
+  50% {
+    box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.05);
+  }
+}
+
+@-webkit-keyframes shine {
+  0% {
+    box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.05);
+  }
+
+  50% {
+    box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.05);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes assteroid {
+  0% {
+    top: -200px;
+    left: -200px;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+  }
+
+  10% {
+    top: 200px;
+    left: 200px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+
+  100% {
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes assteroid {
+  0% {
+    top: -200px;
+    left: -200px;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+  }
+
+  10% {
+    top: 200px;
+    left: 200px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+
+  100% {
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.modal.active{
+  display: block;
+}
+.modal .modal-close {
+  position: absolute;
+  right: 30px;
+  top: 9px;
+  font-size: 59px;
+  line-height: 42px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  color: #000;
+  cursor: pointer;
+}

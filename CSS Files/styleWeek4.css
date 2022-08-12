@@ -1,0 +1,99 @@
+* {
+  background-color: coral;
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 100vh;
+}
+.container {
+  position: relative;
+  width: 48%;
+
+}
+
+@media screen and (max-width:1080px) {
+  .container {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .flex{
+    height: 100vh;
+  }
+}
+
+
+
+.img{
+  background-size: 100% 100%; 
+  transition: all .4s ease-in;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.img1{
+  background-position: center;
+  border-radius: 100%;
+  background-image: url('../Images/likes.JPG');
+  border: 30px solid #0bace2;
+}
+.img2{
+  background-position: center;
+  border-radius: 100%;
+  background-image: url('../Images/likes.JPG');
+  border: 30px solid #0bace2;
+}
+
+.img3{
+  background-image: url('../Images/likes.JPG');
+  top: 30%;
+  left: 78%;
+  width: 50%;
+  height: 50%;
+  border: 20px solid rgb(218, 137, 137);
+}
+
+a {
+  color: white;
+}
+
+.container:hover .img1 {
+  background-image: url('../Images/sketchcollage.JPG');
+  opacity: 0;
+  transition: all 4s ease-in;
+  background-color: rgba(50,50,50,0.5);
+  color: white;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+}
+.container:hover .img2 {
+  background-image: url('../Images/digitalartcollage.JPG');
+  opacity: 0;
+  transition: all 4s ease-in;
+  background-color: rgba(50,50,50,0.5);
+  color: white;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+}
+
+.container:hover .img3 {
+  background-image: url('../Images/streaming.JPG');
+  opacity: 0;
+  transition: all 4s ease-in;
+  background-color: rgba(50,50,50,0.5);
+  color: white;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 72px;
+    background: -webkit-linear-gradient(rgb(12, 215, 230), rgb(170, 9, 130));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

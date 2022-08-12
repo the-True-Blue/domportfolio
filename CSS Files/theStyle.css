@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(15, 13, 48);
+    font-family: 'Heebo', sans-serif;
+}
+
+.star1{
+    position: absolute;
+    top: 80px;
+    left: 460px;
+}
+
+.star2{
+    position: absolute;
+    top: 180px;
+    left: 550px;
+}
+.star3{
+  position: absolute;
+  top: 300px;
+  left: 565px;
+}
+.star4{
+    position: absolute;
+  top: 410px;
+  left: 580px;
+}
+.star5{
+    position: absolute;
+  top: 520px;
+  left: 475px;
+}
+.star6{
+  position: absolute;
+  top: 660px;
+  left: 595px;
+}
+.star7{
+    position: absolute;
+  top: 590px;
+  left: 740px;
+}

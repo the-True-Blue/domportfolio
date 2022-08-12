@@ -1,0 +1,148 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css);
+@import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+ @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+ body {
+	 width: 320px;
+	 margin: 0 auto;
+	 font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', Roboto, Arial, Sans-serif;
+	 color: #fff;
+}
+ h1 {
+	 color: #fff;
+	 background-color: #444;
+	 text-align: center;
+	 padding: 5px 0;
+}
+ p {
+	 padding: 30px;
+}
+ nav {
+	 position: absolute;
+	 top: 500px;
+	 z-index: 100;
+	 letter-spacing: 1px;
+   background-color: #444;
+}
+ nav ul li {
+	 background: #444;
+	 display: inline-block;
+	 margin-right: -4px;
+	 width: 80px;
+	 text-align: center;
+	 line-height: 50px;
+	 font-size: 26px;
+	 box-shadow: inset -1px 0 0 #666;
+	 transition: 0.3s;
+	 cursor: pointer;
+}
+ nav ul li:last-child {
+	 box-shadow: inset 0 0 0 #333;
+}
+ nav ul li:active {
+	 background: #666;
+}
+ nav ul li:active > i {
+	 color: #fff;
+}
+ nav ul li i {
+	 text-decoration: none;
+	 color: #777;
+}
+ * {
+	 box-sizing: border-box;
+}
+ body {
+	 background: #2980b9;
+	 font-family: 'Source Sans Pro';
+	 font-weight: 300;
+}
+ .Message {
+	 display: table;
+	 position: relative;
+	 margin: 1px auto;
+	 width: 100%;
+	 background-color: #0074d9;
+	 color: #fff;
+	 transition: all 0.2s ease;
+}
+ .Message.is-hidden {
+	 opacity: 0;
+	 height: 0;
+	 font-size: 0;
+	 padding: 0;
+	 margin: 0 auto;
+	 display: block;
+}
+ .Message--orange {
+	 background-color: #f39c12;
+}
+ .Message--red {
+	 background-color: #ff4136;
+}
+ .Message--green {
+	 background-color: #2ecc40;
+}
+ .Message-icon {
+	 display: table-cell;
+	 vertical-align: top;
+	 padding: 14px;
+	 text-align: center;
+	 background-color: rgba(0, 0, 0, 0.25);
+}
+ .Message-icon > i {
+	 width: 20px;
+	 font-size: 20px;
+}
+ .Message-body {
+	 display: table-cell;
+	 vertical-align: middle;
+	 padding: 15px 0 30px 10px;
+}
+ .Message-body > p {
+	 line-height: 1.2;
+	 margin-top: 6px;
+	 padding: 0;
+}
+ .Message-button {
+	 position: relative;
+	 margin: 15px 5px -10px;
+	 background-color: rgba(0, 0, 0, 0.25);
+	 box-shadow: 0 3px rgba(0, 0, 0, 0.4);
+	 border: none;
+	 padding: 10px 15px;
+	 font-size: 16px;
+	 font-family: 'Source Sans Pro';
+	 color: #fff;
+	 outline: none;
+	 cursor: pointer;
+}
+ .Message-button:active {
+	 background: rgba(0, 0, 0, 0.3);
+	 box-shadow: 0 0px rgba(0, 0, 0, 0.4);
+	 top: 3px;
+}
+ .Message-like {
+	 position: absolute;
+	 background-color: rgba(0, 0, 0, 0.3);
+	 color: #fff;
+	 border: none;
+	 outline: none;
+	 font-size: 20px;
+	 right: 5px;
+	 top: 5px;
+	 cursor: pointer;
+}
+ .u-italic {
+	 font-style: italic;
+}
+ #mobile {
+	 width: 360px;
+	 height: 600px;
+	 background: #000;
+	 border-width: 60px 20px 100px 20px;
+	 border-color: #eee;
+	 border-style: solid;
+	 border-radius: 30px;
+	 margin: 30px auto;
+	 overflow: hidden;
+}

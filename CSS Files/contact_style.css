@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+#container-all-section {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    background-color: #02084D;
+    width: 100%;
+    clip-path: polygon(100% 0, 100% 21%, 100% 33%, 84% 100%, 25% 100%, 0 100%, 0 0);
+
+
+  }
+
+
+
+  /* title css */
+
+  #title-contact-me{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    height: 30%;
+    
+  }
+
+  #title-contact{
+    color: white;
+
+  }
+  #me{
+    margin-left: 20px;
+    color: #00D9FF;
+    ;
+  }
+
+
+  /* forum css container */
+
+  #container-forum{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #img-joestick-left{
+    display: flex;
+  }
+
+
+  #contact-forum{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+  }
+
+.container{
+    margin-bottom: 10px;
+}
+
+.small-input{
+  width: 280px;
+  height: 35px;
+
+}
+
+.input{
+    border-radius: 5px;
+    background-color: rgb(122, 122, 122);
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    border: rgb(0, 0, 0);
+    padding-left: 5px;
+
+}
+
+.input::placeholder{
+    color: rgb(207, 206, 206);
+}
+
+#container-due{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#text-description{
+
+    padding-top: 10px;
+    padding-left: 3px;
+}
+
+#submit{
+    width: 100px;
+    height: 30px;
+    border: rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color: #00D9FF;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+#submit:hover{
+    background-color: #028fa8;
+    -moz-transition: all 0.5s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.5s ease-in;
+    /* Opera */
+    -o-transition: all 0.5s ease-in;
+    /* Standard */
+    transition: all 0.5s ease-in;
+}
+
+#imgdue-josestick{
+  display: none;
+}
+
+#button-submit{
+  display: flex;
+}
+
+@media only screen and (max-width: 1300px){
+  #container-all-section {
+    clip-path: polygon(100% 0, 100% 21%, 100% 33%, 100% 90%, 41% 96%, 0 100%, 0 0);
+
+
+  }
+
+}
+
+
+@media only screen and (max-width: 1150px){
+  #container-all-section {
+    clip-path: polygon(100% 0, 100% 21%, 100% 33%, 100% 90%, 41% 96%, 0 100%, 0 0);
+    height: 90vh;
+
+  }
+  #container-forum{
+
+    align-items: center;
+    justify-content:flex-start;
+    margin-bottom: 100px;
+  }
+
+  .small-input{
+    width: 200px;
+    height: 35px;
+  
+  }#text-description{
+    width: 410px;
+  }
+
+}
+
+
+
+
+@media only screen and (max-width: 950px){
+  #img-josestick{
+    display: none;
+  }
+
+  #container-forum{
+    flex-direction: column-reverse;
+    margin-bottom: 70px;
+    
+  }
+  #contact-forum{
+    margin-right: 0px;
+  }
+
+
+  #imgdue-josestick{
+    display: block;
+    height: 200px;
+  }
+
+  .small-input{
+    width:250px ;
+    height: 40px;
+  }
+
+  #button-submit{
+    display: flex;
+    justify-content: center;
+  }
+
+  #submit{
+   width: 200px; 
+   height: 40px;
+   margin-bottom: 10px;
+  }
+
+  #text-description{
+    width: 505px;
+  }
+}
+
+
+
+@media only screen and (max-width: 590px){
+
+  #container-all-section{
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 100% 95%, 70% 100%, 30% 100%, 0 95%, 0% 30%);
+
+  }
+  #title-contact-me{
+    font-size: 28px;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    height: 150px;
+    margin-top: 20px;
+    
+  }
+
+  #container-forum{
+    margin-top: 0px;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+    align-items: center;
+    
+
+  }
+
+  .small-input{
+    width:350px ;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+
+  #text-description{
+    width: 350px;
+    
+  }
+
+  #submit{
+    margin-top: 10px;
+  }
+
+}
