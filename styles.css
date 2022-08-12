@@ -178,7 +178,7 @@ header {
   height: 100%;
   content: "";
   background-image: linear-gradient(
-    rgba(0, 153, 255, 0.829),
+    rgba(0, 187, 255, 0.475),
     rgba(221, 0, 203, 0.39)
   );
 }
