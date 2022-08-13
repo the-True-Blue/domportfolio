@@ -206,7 +206,7 @@ header {
 /* logo and header section ends here*/
 
 .bg_blue {
-  background: linear-gradient(#2b1055, #7597de);
+  background: linear-gradient(#03054b, #03054b);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
