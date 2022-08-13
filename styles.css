@@ -14,6 +14,12 @@ body {
   overflow-x: hidden;
 }
 
+:root{
+  /* scrollbar-face-color: rgb(176, 88, 54); Firefox 63 compatibility */
+  /* scrollbar-track-color: rgb(51, 62, 72); Firefox 63 compatibility */
+  scrollbar-color:#00e5ff rgba(0, 153, 255, 0.829);
+  scrollbar-width: thin;
+}
 
 html::-webkit-scrollbar-thumb {
   background: rgb(0, 229, 255);
@@ -67,7 +73,7 @@ header {
   clip-path: polygon(0 0, 100% 0, 64% 100%, 0% 100%);
   padding: 16px;
   line-height: 1.3rem;
-  position: absolute;
+  /*position: absolute;*/
 }
 
 .logo p {
@@ -234,7 +240,7 @@ header {
   transform: scale(1.2);
 }
 .section_parallax1 img#mountains_front {
-  z-index: 10;
+  z-index: 11;
 }
 .section_parallax1 #text {
   position: absolute;
@@ -276,6 +282,7 @@ header {
 
 .section-1-img {
   display: flex;
+  justify-content: center;
 }
 
 .section-1-img .img {
@@ -815,7 +822,7 @@ transform: rotate(0deg)
   margin: 2rem 0;
   z-index: 1;
 }
-.btn{
+.btns{
   border: none;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -836,22 +843,22 @@ transform: rotate(0deg)
 
   }
 }
-.btn.btn-pink{
+.btns.btn-pink{
   background: #00d9ff;
   color: rgb(0, 0, 0);
   border-color: #00d9ff;
   transition: all 0.5s ease-in-out;
 }
-.btn.btn-pink:hover{
+.btns.btn-pink:hover{
   background: transparent;
   border-color: #00d9ff;
   color: rgb(255, 255, 255);
 }
-.btn.btn-white{
+.btns.btn-white{
   color: #fff;
   transition: all 0.5s ease-in-out;
 }
-.btn.btn-white:hover{
+.btns.btn-white:hover{
   background: #00d9ff;
   border-color: #00d9ff;
   color: rgb(0, 0, 0);
