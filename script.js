@@ -127,12 +127,23 @@ $(document).ready(function () {
     $('.popup').fadeOut();
     $('body').removeClass('overflow-hidden');
   });
+
+  $('#open-portfolio').on('click', function(){
+    $('#portfolio-holder').fadeIn();
+    $('body').addClass('overflow-hidden');
+  });
+
+  $('.go-back').on('click', function(){
+    $('.popup').fadeOut();
+    $('body').removeClass('overflow-hidden');
+  });
 });
 
 function scrollToBottom() {
   window.scrollTo({
-    top: 5000,
+    top: 5500,
     behavior: 'smooth'
   });
 }
+
 
