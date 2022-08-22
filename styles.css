@@ -206,7 +206,7 @@ header {
 /* logo and header section ends here*/
 
 .bg_blue {
-  background: linear-gradient(#03054b, #03054b);
+  background: linear-gradient(#2b1055, #7597de);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -240,7 +240,7 @@ header {
   transform: scale(1.2);
 }
 .section_parallax1 img#mountains_front {
-  z-index: 11;
+  z-index: 10;
 }
 .section_parallax1 #text {
   position: absolute;
@@ -988,6 +988,11 @@ a:after {
 .menu > ol > li:focus .sub-menu, .menu > ol > li:focus-within .sub-menu {
   max-height: 500px;
 }
+.menu > ol > li:first-child:focus:after,
+.menu > ol > li:first-child:focus-within:after {
+  background: transparent;
+  display: none;
+}
 .menu > ol > li:focus a:before, .menu > ol > li:focus-within a:before {
   transform: rotate(-180deg);
 }
@@ -1065,7 +1070,7 @@ a:after {
     vertical-align: top;
     width: 33.33%;
  }
-  .menu > ol > li:hover:after, .menu > ol > li:focus:after, .menu > ol > li:focus-within:after {
+  .menu > ol > li:hover:after {
     background: linear-gradient(to bottom,var(--accent-color),var(--gradient-color));
     border-radius: 3px;
     top: -15px;
@@ -1202,6 +1207,12 @@ a:after {
   background-color: transparent;
   border: 0;
   cursor: pointer;
+}
+
+@media(max-width: 1200px){
+  html {
+    font-size: 55%;
+  }
 }
 
 @media (max-width: 600px) {
