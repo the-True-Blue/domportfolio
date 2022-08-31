@@ -147,3 +147,20 @@ function scrollToBottom() {
 }
 
 
+if (window.location.hash)
+    scroll(0,0);
+// takes care of some browsers issue
+setTimeout(function(){scroll(0,0);},1);
+
+// if we have anchor on the url (calling from other page)
+if(window.location.hash){
+    // smooth scroll to the anchor id
+    $('html,body').animate({
+        scrollTop:$(window.location.hash).offset().top + 'px'
+        },1000,'swing');  
+
+}
+
+
+
+

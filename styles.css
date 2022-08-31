@@ -1215,6 +1215,17 @@ a:after {
   }
 }
 
+@media screen and (max-width: 991px) {
+  .about-wrapper {
+    display: flex;
+    flex-flow: column;
+    flex-direction: column-reverse;
+  }
+  .box-wrapper {
+    padding: 0 20px;
+  }
+}
+
 @media (max-width: 600px) {
   .section-1-img .img {
     width: 80px;
@@ -1239,4 +1250,55 @@ a:after {
 
 .animate__animated.animate__fadeInDown {
   --animate-duration: 2s;
+}
+
+@media screen and (max-width: 767px) {
+  .section-sub {
+    padding: 100px 50px;
+  }
+  .owl-nav .owl-prev {
+    left: -40px;
+  }
+  .owl-nav .owl-next{
+    right: -40px;
+  }
+  .owl-nav .owl-prev::before, .owl-nav .owl-next::before {
+    font-size: 20px;
+  }
+  .animation-anim-title {
+    padding: 2.4rem 2rem;
+  }
+  
+}
+
+
+
+@media screen and (max-width: 560px) {
+
+  .logo {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .logo p {
+    font-size: 16px;
+    width: 100%;
+    max-width: 150px;
+  }
+
+  #menu {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .logo p {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .logo {
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+    padding: 15px 10px;
+  }
 }
