@@ -4179,3 +4179,50 @@ button:hover {
 #btn-start.button .outer .height {
   background: #2d7ba0;
 }
+#btn-back{
+  background-color: red;
+  margin-top: 450px;
+  width: 150px;
+  height: 50px;
+  font-size: 10px;
+  border-radius: 5rem;
+  box-shadow: white 0px 25px 50px -12px;
+  border: 2px solid black;
+  color: white;
+  
+
+}
+
+#btn-back:hover{
+  background-color:rgb(211, 0, 0);
+}
+
+
+a{
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  margin-left: 25px;
+
+}
+
+
+@media (max-width: 750px) {
+  .start-screen{
+    background: url("../Images/comicbackground.png");
+    height: 900px;
+  }
+  #btn-back{
+    margin-top: 340px;
+  }
+  .start-screen h1{
+    font-size: 40px;
+  }
+  #btn-start{
+    margin-bottom: 100px;
+  }
+}
+
+#btn-start{
+  z-index: 2;
+}
