@@ -127,16 +127,6 @@ $(document).ready(function () {
     $('.popup').fadeOut();
     $('body').removeClass('overflow-hidden');
   });
-
-  $('#open-portfolio').on('click', function(){
-    $('#portfolio-holder').fadeIn();
-    $('body').addClass('overflow-hidden');
-  });
-
-  $('.go-back').on('click', function(){
-    $('.popup').fadeOut();
-    $('body').removeClass('overflow-hidden');
-  });
 });
 
 function scrollToBottom() {
@@ -157,7 +147,7 @@ if(window.location.hash){
     // smooth scroll to the anchor id
     $('html,body').animate({
         scrollTop:$(window.location.hash).offset().top + 'px'
-        },1000,'swing');  
+        },4000,'swing');  
 
 }
 
