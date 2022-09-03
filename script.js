@@ -137,6 +137,7 @@ function scrollToBottom() {
 }
 
 
+/*
 if (window.location.hash)
     scroll(0,0);
 // takes care of some browsers issue
@@ -150,6 +151,8 @@ if(window.location.hash){
         },4000,'swing');  
 
 }
+*/
+
 
 
 
