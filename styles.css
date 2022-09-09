@@ -1220,9 +1220,11 @@ a:after {
     display: flex;
     flex-flow: column;
     flex-direction: column-reverse;
+    height: auto;
   }
   .box-wrapper {
     padding: 0 20px;
+    z-index: 999;
   }
 }
 

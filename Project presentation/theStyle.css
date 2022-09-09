@@ -13,6 +13,10 @@ body {
   left: 75%;
   opacity: 80%;
 }
+#img-lettere{
+  width: 350px;
+}
+
 .star {
   width: 20px;
   height: 20px;
@@ -467,4 +471,64 @@ html {
   border-radius: 4px;
   color: #000;
   cursor: pointer;
+}
+
+
+@media (max-width: 1250px) {
+  .title{
+    left: 50%;
+  }
+  #img-lettere{
+    width: 250px;
+  }
+  .sky-wrapper .moon{
+    left: 40%;
+    top: 65%;
+  }
+  /* .glow{
+    left: 40%;
+  } */
+  .star1 {
+    left: 20%;
+  }
+  .star2 {
+    left: 35%;
+
+  }
+  .star3 {
+    left: 36%;
+    top: 42%;
+
+
+  }
+  .star4 {
+    left: 15%;
+    top: 55%;
+
+  }
+  .star5 {
+    left: 20%;
+    top: 78%;
+
+
+  }
+  .star6 {
+    left: 45%;
+    top: 88%;
+
+  }
+  .star7 {
+    left: 75%;
+    top: 78%;
+  }
+
+}
+
+
+
+@media (max-width: 450px) {
+  .title{
+    left: 40%;
+  }
+
 }
