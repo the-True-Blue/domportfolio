@@ -48,6 +48,8 @@
       scroll-behavior: smooth
       }
       </style>
+
+
     <div class="container">
       <div class="gradient">
         <div class="wrapper">
@@ -64,7 +66,7 @@
       
                 <!-- add link /.. -->
                   <a href="https://tempest-digital.io" onclick="scrolltoBottom()" id="progetti" class="animate__animated animate__fadeInDown">About</a>
-                  <a href="/" id="progetti1" class="animate__animated animate__fadeInDown">Contact</a>
+                  <a href="./Contact/contact.html" id="progetti1" class="animate__animated animate__fadeInDown">Contact</a>
                   <h3 id="progetti2" onclick='ApriProgetti()' class="animate__animated animate__fadeInDown">Projects</h3>
                   <img onclick="ChiudiProgetti()" class="animate__animated animate__fadeInDown" id="arrow-back-project" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAM9JREFUSEvtlt0NgzAMhH0bdARG6yjtJC2bwEbd4CqjIKEQsEXd5CWWUB5w8sUn/wTSyNCIKx1cTfku9SI1yYcuIjIDmCz9Sd4AfCy/7f+i1CQVqvYEoJc4NJJ3ERksv/yAn8AJ+vJcMAy8gbqUCQFn0DrgAvT/4AOogt/pKyYhgPmy1CdQs4oA7JLYndXNwKmxaM1q+eQ2GlLvmpA74pXUJLlO4GaHu5xc+cYmDaQQeb2IM3jYkFgn0lR1LJodIcChP30CRPQd0aX26RTg9QULMp0f9nnE7gAAAABJRU5ErkJggg=="/>
                   <a href="./Final Project/FinalProject.html" id="progetti4" class="animate__animated animate__backInLeft">Animated Sonic Comic</a>
@@ -91,7 +93,7 @@
                 <li class="menu-item"><a href="./Project presentation/index.html">StarryNight</a></li>
               </ol>
             </li>
-            <li class="menu-item"><a href="#0">Contact</a></li>
+            <li class="menu-item" id="open-contact"><a href="#0">Contact</a></li>
           </ol>
         </nav>
      </header>
@@ -318,58 +320,48 @@
           <h1 id="animation">3D Animation</h1>
         </div>
         </div>
-          <div class="owl-carousel owl-theme" id="carousel4">
-            <div>
-              <a
-                href="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/bouncing_ball_project.mp4"
-                class="lightbox-link"
-                data-title="Bouncing Ball"
-              >
-              <video width="100%" class="mtz-vlc-cnlog" playsinline autoplay loop muted>
-                <source src="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/bouncing_ball_project.mp4" type="video/mp4">
-                This browser does not support HTML5.
-                </video>
-              </a>
-            </div>
-            <div>
-              <a
-                href="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/RenderedCinWater.mp4"
-                class="lightbox-link"
-                data-title="Unreal Engine 4 Cinematic: WATERFALL"
-              >
-              <video width="100%" class="mtz-vlc-cnlog" playsinline autoplay loop muted>
-                <source src="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/RenderedCinWater.mp4" type="video/mp4">
-                This browser does not support HTML5.
-                </video>
-              </a>
-            </div>
-            <div>
-              <a
-                href="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/RenderedCinBeach.mp4"
-                class="lightbox-link"
-                data-title="Unreal Engine 4 Cinematic: BEACH"
-              >
-              <video width="100%" class="mtz-vlc-cnlog" playsinline autoplay loop muted>
-                <source src="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/RenderedCinBeach.mp4" type="video/mp4">
-                This browser does not support HTML5.
-                </video>
-              </a>
-            </div>
-            <div>
-              <a
-                href="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/RenderedCinTown.mp4"
-                class="lightbox-link"
-                data-title="Unreal Engine 4 Cinematic: TOWN"
-              >
-              <video width="100%" class="mtz-vlc-cnlog" playsinline autoplay loop muted>
-                <source src="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/RenderedCinTown.mp4" type="video/mp4">
-                This browser does not support HTML5.
-                </video>
-              </a>
-            </div>
-        </div>
+        <div class="owl-carousel owl-theme" id="carousel4">
+          <div>
+            <a
+              href="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/bouncing_ball_project.mp4"
+              class="lightbox-link"
+              data-title="Bouncing Ball"
+            >
+            <img width="100%" class="mtz-vlc-cnlog" src="bouncing_ball_project.gif" >
+
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/RenderedCinWater.mp4"
+              class="lightbox-link"
+              data-title="Unreal Engine 4 Cinematic: WATERFALL"
+            >
+                          <img width="100%" class="mtz-vlc-cnlog" src="RenderedCinWater.gif" >
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/RenderedCinBeach.mp4"
+              class="lightbox-link"
+              data-title="Unreal Engine 4 Cinematic: BEACH"
+            >
+                          <img width="100%" class="mtz-vlc-cnlog" src="RenderedCinBeach.gif" >
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://media.githubusercontent.com/media/the-True-Blue/domportfolio/main/Videos/RenderedCinTown.mp4"
+              class="lightbox-link"
+              data-title="Unreal Engine 4 Cinematic: TOWN"
+            >
+                          <img width="100%" class="mtz-vlc-cnlog" src="RenderedCinTown.gif" >
+
+            </a>
+          </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- Section 2 starts here -->
     <div class="about-wrapper">
@@ -430,7 +422,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="./script.js?v=15"></script>
-    ?v=15
     <script type="text/javascript" src="./mobile.JS"></script>
 
     <div id="resume-holder" class="popup">

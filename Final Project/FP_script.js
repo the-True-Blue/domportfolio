@@ -268,6 +268,7 @@ function playEffectAudios() {
 startBtn.addEventListener("click", function () {
   const loaderEl = document.querySelector(".loader-container");
   document.querySelector(".start-screen").style.display = "none";
+  document.querySelector(".footer-row").style.display = "block";
   loaderEl.style.animationDuration = "5s";
   loaderEl.classList.add("active");
   playBtnAudio();

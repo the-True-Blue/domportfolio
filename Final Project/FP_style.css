@@ -12,12 +12,13 @@ body {
   text-align: center;
   padding-top: 6px;
   user-select: none;
-}
+    background-repeat: no-repeat;
+    background-color: #333333;}
 h1{
   color:rgb(20, 140, 209);
 }
 .start-screen {
-  background: url("./Comicimages/comic background.png");
+  background: url("./Comicimages/comic background3.png");
   background-position: center;
   background-size: cover;
   position: fixed;
@@ -3904,6 +3905,7 @@ button:hover {
   background: transparent;
   z-index: 1;
   padding: 0;
+      display: none;
 }
 .footer-row button {
   margin: 0 5%;
@@ -4209,8 +4211,8 @@ a{
 
 @media (max-width: 750px) {
   .start-screen{
-    background: url("../Images/comicbackground.png");
-    height: 900px;
+    background: url("./Comicimages/comic background.png");
+    height: 400px;
   }
   #btn-back{
     margin-top: 340px;
@@ -4220,6 +4222,9 @@ a{
   }
   #btn-start{
     margin-bottom: 100px;
+  }
+  body{
+    background: url("./Comicimages/comic background.png");
   }
 }
 
