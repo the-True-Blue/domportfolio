@@ -1304,3 +1304,22 @@ a:after {
     padding: 15px 10px;
   }
 }
+
+@media (max-width: 767px){
+  #open-resume{
+  display:none
+  }
+  #link{
+  display:block
+  }
+  }
+  
+  /* Display the iframeand remove the link  on Desktop */
+  @media (min-width: 768px){
+  #iframe{
+  display:block
+  }
+  #link{
+  display:none
+  }
+  }
