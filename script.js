@@ -127,6 +127,16 @@ $(document).ready(function () {
     $('.popup').fadeOut();
     $('body').removeClass('overflow-hidden');
   });
+
+  $('#open-contact2').on('click', function(){
+    $('#contact-holder').fadeIn();
+    $('body').addClass('overflow-hidden');
+  });
+
+  $('.go-back').on('click', function(){
+    $('.popup').fadeOut();
+    $('body').removeClass('overflow-hidden');
+  });
 });
 
 function scrollToBottom() {
@@ -144,6 +154,17 @@ function closeMenu(){
 }
 function disableScroll() {
   console.log(22)
+}
+function contactForm(){
+  $('#progetti1').on('click', function(){
+    $('#contact-holder').fadeIn();
+    $('body').addClass('overflow-hidden');
+  });
+
+  $('.go-back').on('click', function(){
+    $('.popup').fadeOut();
+    $('body').removeClass('overflow-hidden');
+  });
 }
 /*
 if (window.location.hash)
