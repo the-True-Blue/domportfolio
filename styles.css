@@ -91,7 +91,7 @@ header {
   height: 20vh;
   overflow: hidden;
   top: 2.9%;
-  background: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
   margin-bottom: 10px;
 }
 .icon-banner i {
@@ -119,13 +119,13 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
   display: flex;
-  color: rgb(47, 0, 104);
+  color: rgb(255, 255, 255);
   justify-content: center;
   align-items: center;
   z-index: 2;
-  mix-blend-mode:screen;
+  mix-blend-mode:multiply;
   padding-left: 20px;
   margin: 0;
 }
@@ -151,10 +151,6 @@ header {
 }
 .icon-banner video:nth-child(6) {
   left: 80%;
-}
-
-.icon-banner .fa-gamepad {
-  font-size: 6rem;
 }
 
 
@@ -206,7 +202,7 @@ header {
 /* logo and header section ends here*/
 
 .bg_blue {
-  background: linear-gradient(#2b1055, #7597de);
+  background: linear-gradient(#000c4f, #7597de);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1232,6 +1228,20 @@ a:after {
 @media (max-width: 600px) {
   .section-1-img .img {
     width: 80px;
+  }
+  .icon-banner{
+    position: relative;
+    height: 10vh;
+  }
+  .icon-banner h1{
+    font-size: 4rem;
+  }
+  .icon-banner img{
+    position: absolute;
+    height: 80%;
+    width: auto;
+    left: 5px;
+    z-index: 3;
   }
 }
 
