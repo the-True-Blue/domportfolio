@@ -130,13 +130,21 @@ $(document).ready(function () {
 });
 
 function scrollToBottom() {
+  console.log(1)
   window.scrollTo({
     top: 5500,
     behavior: 'smooth'
   });
+  return False;
 }
 
-
+function closeMenu(){
+  var element = document.getElementById("mobile__menu");
+   element.classList.remove("overlay--active");
+}
+function disableScroll() {
+  console.log(22)
+}
 /*
 if (window.location.hash)
     scroll(0,0);
@@ -148,12 +156,7 @@ if(window.location.hash){
     // smooth scroll to the anchor id
     $('html,body').animate({
         scrollTop:$(window.location.hash).offset().top + 'px'
-        },4000,'swing');  
+        },4000,'swing');
 
 }
 */
-
-
-
-
-
