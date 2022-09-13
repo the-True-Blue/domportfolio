@@ -238,6 +238,7 @@ header {
   mix-blend-mode: screen;
   object-fit: contain;
   transform: scale(1.2);
+  margin-top: 5%;
 }
 .section_parallax1 img#mountains_front {
   z-index: 10;
