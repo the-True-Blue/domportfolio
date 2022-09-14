@@ -630,7 +630,7 @@ transform: rotate(0deg)
 }
 
 .about-left-content > div{
-  background: url("./Images/ID\ card\ background.PNG");
+  background: url("../Images/ID\ card\ background.PNG");
   background-position: center;
   background-size: cover;
   padding: 4rem 4rem 2.5rem 5rem;
