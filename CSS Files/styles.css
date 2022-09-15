@@ -285,7 +285,7 @@ header {
 .section-1-img .img {
   width: 100px;
   height: 130px;
-  background: url("./Images/Riley_cover.png");
+  background: url("../Images/Riley_cover.png");
   background-size: cover;
   background-position: center;
   margin-right: 10px;
@@ -293,19 +293,19 @@ header {
 }
 
 .section-1-img .img-2 {
-  background: url("./Images/snowball_cover.gif");
+  background: url("../Images/snowball_cover.gif");
   background-size: cover;
   background-position: center;
 }
 
 .section-1-img .img-3 {
-  background: url("./Images/glitch.gif");
+  background: url("../Images/glitch.gif");
   background-size: cover;
   background-position: center;
 }
 
 .section-1-img .img-4 {
-  background: url("./Images/pirate.GIF");
+  background: url("../Images/pirate.GIF");
   background-size: cover;
   background-position: center;
 }
