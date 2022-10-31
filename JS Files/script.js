@@ -107,6 +107,22 @@ $(document).ready(function () {
       values.find(".mfp-title").html($(targetEl).attr("data-title"));
     }
   );
+  $("#carousel5 .lightbox-link").magnificPopup({
+    type: "iframe",
+    gallery: {
+      enabled: true,
+    },
+    iframe: popUpVideoOptions,
+  });
+
+  $("#carousel5 .lightbox-link").on(
+    "mfpMarkupParse",
+    function (template, values, item) {
+      const targetEl = $.magnificPopup.instance.currItem.el;
+
+      values.find(".mfp-title").html($(targetEl).attr("data-title"));
+    }
+  );
 
   $('#open-resume').on('click', function(){
     $('#resume-holder').fadeIn();

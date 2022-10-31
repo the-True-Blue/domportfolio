@@ -599,6 +599,53 @@ transform: rotate(0deg)
     transform: rotate(360deg)
   }
 }
+.char_model .WIP-wrapper .WIP-anim-title #WIP {
+  font-size: 3.5em;
+  margin-bottom: 30px;
+  margin: 30px 0;
+  color: #fff;
+  position: relative;
+  z-index: 10;
+}
+
+.WIP-wrapper {
+  background:rgba(0, 0, 0, 0.5);
+  height: 30vh;
+  background: #000c4f;
+  display: flex;
+  flex-direction: column;
+  align-items: bottom;
+  justify-content:end;
+ 
+}
+
+.WIP-anim-title{
+  position: relative;
+  background:rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.4rem 5rem;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.WIP-anim-title::before{
+  content: '';
+  position: absolute;
+  width: 140%;
+  height: 90%;
+  background: linear-gradient(#00ccff,#d400d4);
+  animation: animate5 4s linear infinite;
+}
+.WIP-anim-title::after{
+  content: '';
+  position: absolute;
+  background: #03054b;
+  inset: 4px;
+  border-radius: 16px;
+}
 
 
 
