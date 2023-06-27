@@ -108,42 +108,24 @@ $(document).ready(function () {
       values.find(".mfp-title").html($(targetEl).attr("data-title"));
     }
   );
-
-  //SHOW UP PLEASE
-  function openVideoPopup(element) {
-    const videoUrl = $(element).attr("data-video-url");
-    const title = $(element).attr("data-title");
   
-    let popUpVideoOptions = {
-      markup:
-        '<div class="mfp-iframe-scaler" style="position:static;padding:0;height:auto;">' +
-        '<div class="mfp-close"></div>' +
-        '<video class="mfp-iframe" style="width:100%;height:100%;" controls autoplay></video>' +
-        '<div class="mfp-title"></div>' +
-        "</div>",
-      srcAction: videoUrl,
-      titleSrc: title,
-    };
+  $("#carousel4 .lightbox-link").on("mfpOpen", function () {
+    const targetEl = $.magnificPopup.instance.currItem.el;
+    const linkUrl = window.location.href.split("#")[0] + "#popup";
   
-    $.magnificPopup.open({
-      items: {
-        src: '<div class="mfp-iframe-holder">' +
-          '<div class="mfp-content"></div>' +
-          '</div>',
-        type: 'inline'
-      },
-      callbacks: {
-        open: function () {
-          $(".mfp-content").append(popUpVideoOptions.markup);
-          $(".mfp-iframe").attr("src", popUpVideoOptions.srcAction);
-          $(".mfp-title").text(popUpVideoOptions.titleSrc);
-        },
-        close: function () {
-          $(".mfp-iframe").attr("src", "");
-        }
-      }
-    });
-  }
+    // Update the browser's URL without reloading
+    window.history.replaceState(null, null, linkUrl);
+  
+    // Update the popup link's href attribute to the new URL
+    $(targetEl).attr("href", linkUrl);
+  });
+  
+  $("#carousel4 .lightbox-link").on("mfpClose", function () {
+    const linkUrl = window.location.href.split("#")[0];
+  
+    // Restore the original URL without the fragment identifier
+    window.history.replaceState(null, null, linkUrl);
+  });
  
 
   $('#open-resume').on('click', function(){
