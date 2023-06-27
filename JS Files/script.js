@@ -119,7 +119,7 @@ $(document).ready(function () {
     },
     iframe: popUpVideoOptions,
   });
-  
+  // SHOW UP PLEASE
 
   $('#open-resume').on('click', function(){
     $('#resume-holder').fadeIn();
