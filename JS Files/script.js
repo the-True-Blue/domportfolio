@@ -109,18 +109,42 @@ $(document).ready(function () {
     }
   );
 
-  $("#carousel4 .lightbox-link").on("click", function (e) {
-  e.preventDefault();
-  const videoUrl = $(this).attr("data-video-url");
-  $.magnificPopup.open({
-    items: {
-      src: videoUrl,
-      type: "iframe",
-    },
-    iframe: popUpVideoOptions,
-  });
-});
-  // SHOW UP PLEASE
+  //SHOW UP PLEASE
+  function openVideoPopup(element) {
+    const videoUrl = $(element).attr("data-video-url");
+    const title = $(element).attr("data-title");
+  
+    let popUpVideoOptions = {
+      markup:
+        '<div class="mfp-iframe-scaler" style="position:static;padding:0;height:auto;">' +
+        '<div class="mfp-close"></div>' +
+        '<video class="mfp-iframe" style="width:100%;height:100%;" controls autoplay></video>' +
+        '<div class="mfp-title"></div>' +
+        "</div>",
+      srcAction: videoUrl,
+      titleSrc: title,
+    };
+  
+    $.magnificPopup.open({
+      items: {
+        src: '<div class="mfp-iframe-holder">' +
+          '<div class="mfp-content"></div>' +
+          '</div>',
+        type: 'inline'
+      },
+      callbacks: {
+        open: function () {
+          $(".mfp-content").append(popUpVideoOptions.markup);
+          $(".mfp-iframe").attr("src", popUpVideoOptions.srcAction);
+          $(".mfp-title").text(popUpVideoOptions.titleSrc);
+        },
+        close: function () {
+          $(".mfp-iframe").attr("src", "");
+        }
+      }
+    });
+  }
+ 
 
   $('#open-resume').on('click', function(){
     $('#resume-holder').fadeIn();
