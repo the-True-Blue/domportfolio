@@ -100,33 +100,40 @@ $(document).ready(function () {
     iframe: popUpVideoOptions,
   });
 
-  $("#carousel4 .lightbox-link").on(
-    "mfpMarkupParse",
-    function (template, values, item) {
-      const targetEl = $.magnificPopup.instance.currItem.el;
-
-      values.find(".mfp-title").html($(targetEl).attr("data-title"));
-    }
-  );
-  
   $("#carousel4 .lightbox-link").on("mfpOpen", function () {
     const targetEl = $.magnificPopup.instance.currItem.el;
-    const linkUrl = window.location.href.split("#")[0] + "#popup";
-  
+    const linkUrl = window.location.href.split("#")[0] + "#" + $(targetEl).attr("data-video");
+
     // Update the browser's URL without reloading
     window.history.replaceState(null, null, linkUrl);
-  
+
     // Update the popup link's href attribute to the new URL
     $(targetEl).attr("href", linkUrl);
   });
-  
+
   $("#carousel4 .lightbox-link").on("mfpClose", function () {
     const linkUrl = window.location.href.split("#")[0];
-  
+
     // Restore the original URL without the fragment identifier
     window.history.replaceState(null, null, linkUrl);
   });
- 
+
+  // Check if the URL contains a fragment identifier
+  if (window.location.hash) {
+    const videoId = window.location.hash.substring(1);
+    const videoLink = $("#carousel4 .lightbox-link[data-video='" + videoId + "']");
+    if (videoLink.length > 0) {
+      // Delay opening the popup to ensure it is properly initialized
+      setTimeout(function () {
+        $.magnificPopup.open({
+          items: {
+            src: videoLink.attr("href"),
+            type: "iframe",
+          },
+        });
+      }, 500);
+    }
+  }
 
   $('#open-resume').on('click', function(){
     $('#resume-holder').fadeIn();
@@ -159,33 +166,12 @@ $(document).ready(function () {
   });
 });
 
-function scrollToBottom() {
-  console.log(1)
-  window.scrollTo({
-    top: 5500,
-    behavior: 'smooth'
-  });
-  return False;
-}
 
-function closeMenu(){
-  var element = document.getElementById("mobile__menu");
-   element.classList.remove("overlay--active");
-}
-function disableScroll() {
-  console.log(22)
-}
-function contactForm(){
-  $('#progetti1').on('click', function(){
-    $('#contact-holder').fadeIn();
-    $('body').addClass('overflow-hidden');
-  });
 
-  $('.go-back').on('click', function(){
-    $('.popup').fadeOut();
-    $('body').removeClass('overflow-hidden');
-  });
-}
+
+
+
+
 /*
 if (window.location.hash)
     scroll(0,0);
