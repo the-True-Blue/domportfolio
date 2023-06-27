@@ -46,6 +46,7 @@ $(document).ready(function () {
       },
     },
   });
+
   let popUpImageOptions = {
     markup:
       '<div class="mfp-figure">' +
@@ -60,6 +61,7 @@ $(document).ready(function () {
     verticalFit: true,
     tError: '<a href="%url%">The image</a> could not be loaded.',
   };
+
   let popUpVideoOptions = {
     markup:
       '<div class="mfp-iframe-scaler">' +
@@ -71,14 +73,8 @@ $(document).ready(function () {
       "</div>",
     srcAction: "iframe_src",
     type: "iframe",
-    callbacks: {
-      markupParse: function (template, values, item) {
-        values.title = item.el.attr("data-title");
-        const videoId = item.el.attr("data-video");
-        values.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
-      },
-    },
   };
+
   $("#carousel1 .lightbox-link").magnificPopup({
     type: "image",
     gallery: {
@@ -86,6 +82,7 @@ $(document).ready(function () {
     },
     image: popUpImageOptions,
   });
+
   $("#carousel2 .lightbox-link").magnificPopup({
     type: "image",
     gallery: {
@@ -93,6 +90,7 @@ $(document).ready(function () {
     },
     image: popUpImageOptions,
   });
+
   $("#carousel3 .lightbox-link").magnificPopup({
     type: "image",
     gallery: {
@@ -100,6 +98,7 @@ $(document).ready(function () {
     },
     image: popUpImageOptions,
   });
+
   $("#carousel4 .lightbox-link").magnificPopup({
     type: "iframe",
     gallery: {
@@ -115,15 +114,22 @@ $(document).ready(function () {
     const videoSource = $(targetEl).attr("data-video");
   
     const videoElement = $.magnificPopup.instance.content.find("iframe.mfp-iframe");
+  
+    // Bind the 'load' event to the video element
+    videoElement.on("load", function () {
+      // Update the video title
+      $.magnificPopup.instance.content.find(".mfp-title").text(videoTitle);
+  
+      // Update the browser's URL without reloading
+      window.history.replaceState(null, null, "#" + videoSource);
+  
+      // Play the video
+      videoElement[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    });
+  
+    // Delay setting the src attribute until the content is loaded
     videoElement.attr("src", videoUrl);
-  
-    // Update the video title
-    $.magnificPopup.instance.content.find(".mfp-title").text(videoTitle);
-  
-    // Update the browser's URL without reloading
-    window.history.replaceState(null, null, "#" + videoSource);
   });
-  
 
   $("#carousel4 .lightbox-link").on("mfpClose", function () {
     const linkUrl = window.location.href.split("#")[0];
@@ -137,15 +143,31 @@ $(document).ready(function () {
     const videoId = window.location.hash.substring(1);
     const videoLink = $("#carousel4 .lightbox-link[data-video='" + videoId + "']");
     if (videoLink.length > 0) {
-      // Delay opening the popup to ensure it is properly initialized
-      setTimeout(function () {
+      // Bind 'click' event to the popup
+      videoLink.on("click", function (e) {
+        e.preventDefault();
         $.magnificPopup.open({
           items: {
             src: videoLink.attr("href"),
             type: "iframe",
           },
+          callbacks: {
+            open: function () {
+              const videoElement = this.content.find("iframe");
+              videoElement.on("load", function () {
+                // Play the video
+                videoElement[0].contentWindow.postMessage(
+                  '{"event":"command","func":"playVideo","args":""}',
+                  "*"
+                );
+              });
+            },
+          },
         });
-      }, 500);
+      });
+
+      // Trigger the click event to open the popup
+      videoLink.trigger("click");
     }
   }
 
