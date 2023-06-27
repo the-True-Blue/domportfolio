@@ -108,6 +108,17 @@ $(document).ready(function () {
       values.find(".mfp-title").html($(targetEl).attr("data-title"));
     }
   );
+
+  $("#carousel4 .lightbox-link").on("click", function (e) {
+  e.preventDefault();
+  const videoUrl = $(this).attr("data-video-url");
+  $.magnificPopup.open({
+    items: {
+      src: videoUrl,
+      type: "iframe",
+    },
+    iframe: popUpVideoOptions,
+  });
   
 
   $('#open-resume').on('click', function(){
