@@ -62,14 +62,22 @@ $(document).ready(function () {
   };
   let popUpVideoOptions = {
     markup:
-      '<div class="mfp-iframe-scaler" style="position:static;padding:0;height:auto;">' +
+      '<div class="mfp-iframe-scaler">' +
       '<div class="mfp-close"></div>' +
-      '<video class="mfp-iframe" style="width:100%;height:100%;" controls autoplay></video>' +
+      '<div class="mfp-iframe-wrapper">' +
+      '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+      "</div>" +
       '<div class="mfp-title"></div>' +
-      "</div>", // HTML markup of popup, `mfp-close` will be replaced by the close button
-
+      "</div>",
     srcAction: "iframe_src",
-    titleSrc: "data-title",
+    type: "iframe",
+    callbacks: {
+      markupParse: function (template, values, item) {
+        values.title = item.el.attr("data-title");
+        const videoId = item.el.attr("data-video");
+        values.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+      },
+    },
   };
   $("#carousel1 .lightbox-link").magnificPopup({
     type: "image",
@@ -102,14 +110,20 @@ $(document).ready(function () {
 
   $("#carousel4 .lightbox-link").on("mfpOpen", function () {
     const targetEl = $.magnificPopup.instance.currItem.el;
-    const linkUrl = window.location.href.split("#")[0] + "#" + $(targetEl).attr("data-video");
-
+    const videoUrl = $(targetEl).attr("href");
+    const videoTitle = $(targetEl).attr("data-title");
+    const videoSource = $(targetEl).attr("data-video");
+  
+    const videoElement = $.magnificPopup.instance.content.find("iframe.mfp-iframe");
+    videoElement.attr("src", videoUrl);
+  
+    // Update the video title
+    $.magnificPopup.instance.content.find(".mfp-title").text(videoTitle);
+  
     // Update the browser's URL without reloading
-    window.history.replaceState(null, null, linkUrl);
-
-    // Update the popup link's href attribute to the new URL
-    $(targetEl).attr("href", linkUrl);
+    window.history.replaceState(null, null, "#" + videoSource);
   });
+  
 
   $("#carousel4 .lightbox-link").on("mfpClose", function () {
     const linkUrl = window.location.href.split("#")[0];
@@ -135,6 +149,9 @@ $(document).ready(function () {
     }
   }
 
+
+
+  
   $('#open-resume').on('click', function(){
     $('#resume-holder').fadeIn();
     $('body').addClass('overflow-hidden');
