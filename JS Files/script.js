@@ -3,23 +3,18 @@ let moon = $("#moon");
 let mountains_behind = $("#mountains_behind");
 let text = $("#text");
 let mountains_front = $("#mountains_front");
+
 $(window).on("scroll", function () {
   let targetEl = $(".section_parallax1-content");
   let posY = targetEl[0].getBoundingClientRect().y;
   let value = Math.abs(posY);
+
   if (value > targetEl[0].clientHeight || posY > 0) return false;
-  stars.css({
-    left: value * 0.25 + "px",
-  });
-  moon.css({
-    top: value * 1.05 + "px",
-  });
-  mountains_behind.css({
-    top: value * 0.5 + "px",
-  });
-  mountains_front.css({
-    top: value * 0 + "px",
-  });
+
+  stars.css({ left: value * 0.25 + "px" });
+  moon.css({ top: value * 1.05 + "px" });
+  mountains_behind.css({ top: value * 0.5 + "px" });
+  mountains_front.css({ top: value * 0 + "px" });
   text.css({
     marginRight: value * 4 + "px",
     marginTop: value * 1.5 + "px",
@@ -35,15 +30,9 @@ $(document).ready(function () {
     dots: false,
     autoplay: true,
     responsive: {
-      0: {
-        items: 1,
-      },
-      768: {
-        items: 2,
-      },
-      992: {
-        items: 3,
-      },
+      0: { items: 1 },
+      768: { items: 2 },
+      992: { items: 3 },
     },
   });
 
@@ -80,11 +69,14 @@ $(document).ready(function () {
     const videoUrl = $(targetEl).attr("href");
     const videoTitle = $(targetEl).attr("data-title");
     const videoSource = $(targetEl).attr("data-video");
-
-    const videoElement = $.magnificPopup.instance.content.find("iframe.mfp-iframe");
+    const videoElement = $.magnificPopup.instance.content.find(
+      "iframe.mfp-iframe"
+    );
 
     videoElement.on("load", function () {
-      $.magnificPopup.instance.content.find(".mfp-title").text(videoTitle);
+      $.magnificPopup.instance.content
+        .find(".mfp-title")
+        .text(videoTitle);
       videoElement[0].contentWindow.postMessage(
         '{"event":"command","func":"playVideo","args":""}',
         "*"
@@ -92,40 +84,31 @@ $(document).ready(function () {
     });
 
     videoElement.attr("src", videoUrl);
-
     const fragmentIdentifier = "#" + videoSource + "a";
     window.history.replaceState(null, null, fragmentIdentifier);
   }
 
   $("#carousel1 .lightbox-link").magnificPopup({
     type: "image",
-    gallery: {
-      enabled: true,
-    },
+    gallery: { enabled: true },
     image: popUpImageOptions,
   });
 
   $("#carousel2 .lightbox-link").magnificPopup({
     type: "image",
-    gallery: {
-      enabled: true,
-    },
+    gallery: { enabled: true },
     image: popUpImageOptions,
   });
 
   $("#carousel3 .lightbox-link").magnificPopup({
     type: "image",
-    gallery: {
-      enabled: true,
-    },
+    gallery: { enabled: true },
     image: popUpImageOptions,
   });
 
   $("#carousel4a .lightbox-link").magnificPopup({
     type: "iframe",
-    gallery: {
-      enabled: true,
-    },
+    gallery: { enabled: true },
     iframe: popUpVideoOptions,
   });
 
@@ -134,11 +117,14 @@ $(document).ready(function () {
     const videoUrl = $(targetEl).attr("href");
     const videoTitle = $(targetEl).attr("data-title");
     const videoSource = $(targetEl).attr("data-video");
-
-    const videoElement = $.magnificPopup.instance.content.find("iframe.mfp-iframe");
+    const videoElement = $.magnificPopup.instance.content.find(
+      "iframe.mfp-iframe"
+    );
 
     videoElement.on("load", function () {
-      $.magnificPopup.instance.content.find(".mfp-title").text(videoTitle);
+      $.magnificPopup.instance.content
+        .find(".mfp-title")
+        .text(videoTitle);
       window.history.replaceState(null, null, "#" + videoSource);
       videoElement[0].contentWindow.postMessage(
         '{"event":"command","func":"playVideo","args":""}',
@@ -156,7 +142,10 @@ $(document).ready(function () {
 
   if (window.location.hash) {
     const videoId = window.location.hash.substring(1);
-    const videoLink = $("#carousel4a .lightbox-link[data-video='" + videoId + "']");
+    const videoLink = $(
+      "#carousel4a .lightbox-link[data-video='" + videoId + "']"
+    );
+
     if (videoLink.length > 0) {
       videoLink.trigger("click");
     }
@@ -164,9 +153,7 @@ $(document).ready(function () {
 
   $("#carousel4b .lightbox-link").magnificPopup({
     type: "iframe",
-    gallery: {
-      enabled: true,
-    },
+    gallery: { enabled: true },
     iframe: popUpVideoOptions,
   });
 
@@ -175,11 +162,14 @@ $(document).ready(function () {
     const videoUrl = $(targetEl).attr("href");
     const videoTitle = $(targetEl).attr("data-title");
     const videoSource = $(targetEl).attr("data-video");
-
-    const videoElement = $.magnificPopup.instance.content.find("iframe.mfp-iframe");
+    const videoElement = $.magnificPopup.instance.content.find(
+      "iframe.mfp-iframe"
+    );
 
     videoElement.on("load", function () {
-      $.magnificPopup.instance.content.find(".mfp-title").text(videoTitle);
+      $.magnificPopup.instance.content
+        .find(".mfp-title")
+        .text(videoTitle);
       window.history.replaceState(null, null, "#" + videoSource);
       videoElement[0].contentWindow.postMessage(
         '{"event":"command","func":"playVideo","args":""}',
@@ -197,62 +187,94 @@ $(document).ready(function () {
 
   if (window.location.hash) {
     const videoId = window.location.hash.substring(1);
-    const videoLink = $("#carousel4b .lightbox-link[data-video='" + videoId + "']");
+    const videoLink = $(
+      "#carousel4b .lightbox-link[data-video='" + videoId + "']"
+    );
+
     if (videoLink.length > 0) {
       videoLink.trigger("click");
     }
   }
 
-  
-  $('#open-resume').on('click', function(){
-    $('#resume-holder').fadeIn();
-    $('body').addClass('overflow-hidden');
+  $("#open-resume").on("click", function () {
+    $("#resume-holder").fadeIn();
+    $("body").addClass("overflow-hidden");
   });
 
-  $('.go-back').on('click', function(){
-    $('.popup').fadeOut();
-    $('body').removeClass('overflow-hidden');
+  $(".go-back").on("click", function () {
+    $(".popup").fadeOut();
+    $("body").removeClass("overflow-hidden");
   });
 
-  $('#open-contact').on('click', function(){
-    $('#contact-holder').fadeIn();
-    $('body').addClass('overflow-hidden');
+  $("#open-contact").on("click", function () {
+    $("#contact-holder").fadeIn();
+    $("body").addClass("overflow-hidden");
   });
 
-  $('.go-back').on('click', function(){
-    $('.popup').fadeOut();
-    $('body').removeClass('overflow-hidden');
+  $(".go-back").on("click", function () {
+    $(".popup").fadeOut();
+    $("body").removeClass("overflow-hidden");
   });
 
-  $('#open-contact2').on('click', function(){
-    $('#contact-holder').fadeIn();
-    $('body').addClass('overflow-hidden');
+  $("#open-contact2").on("click", function () {
+    $("#contact-holder").fadeIn();
+    $("body").addClass("overflow-hidden");
   });
 
-  $('.go-back').on('click', function(){
-    $('.popup').fadeOut();
-    $('body').removeClass('overflow-hidden');
+  $(".go-back").on("click", function () {
+    $(".popup").fadeOut();
+    $("body").removeClass("overflow-hidden");
   });
 });
 
+function getYoutubeVideoId(url) {
+  var match = url.match(
+    /(?:\/|%3D|v=|vi=)([0-9A-Za-z-_]{11})(?:[%#?&]|$)/
+  );
 
-
-
-
-
-
-/*
-if (window.location.hash)
-    scroll(0,0);
-// takes care of some browsers issue
-setTimeout(function(){scroll(0,0);},1);
-
-// if we have anchor on the url (calling from other page)
-if(window.location.hash){
-    // smooth scroll to the anchor id
-    $('html,body').animate({
-        scrollTop:$(window.location.hash).offset().top + 'px'
-        },4000,'swing');
-
+  if (match && match[1]) {
+    return match[1];
+  } else {
+    return null;
+  }
 }
-*/
+
+$(document).on(
+  "click",
+  "button.mfp-arrow.mfp-arrow-left.mfp-prevent-close",
+  (e) => {
+    let vid = getYoutubeVideoId(
+      $(e.currentTarget)
+        .closest(".mfp-gallery")
+        .find(".mfp-content iframe")
+        .attr("src")
+    );
+
+    if (vid) {
+      $(e.currentTarget)
+        .closest(".mfp-gallery")
+        .find(".mfp-content iframe")
+        .attr("src", `https://www.youtube.com/embed/${vid}?autoplay=1`);
+    }
+  }
+);
+
+$(document).on(
+  "click",
+  "button.mfp-arrow.mfp-arrow-right.mfp-prevent-close",
+  (e) => {
+    let vid = getYoutubeVideoId(
+      $(e.currentTarget)
+        .closest(".mfp-gallery")
+        .find(".mfp-content iframe")
+        .attr("src")
+    );
+
+    if (vid) {
+      $(e.currentTarget)
+        .closest(".mfp-gallery")
+        .find(".mfp-content iframe")
+        .attr("src", `https://www.youtube.com/embed/${vid}?autoplay=1`);
+    }
+  }
+);
