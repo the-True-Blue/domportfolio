@@ -50,6 +50,9 @@
     overflow-x: hidden;
     transition: all 0.5s ease 0s;
   }
+  .disable-scroll {
+    overflow: hidden;
+  }
   
   .overlay--active {
     width: 100%;

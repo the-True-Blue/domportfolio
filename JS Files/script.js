@@ -196,35 +196,68 @@ $(document).ready(function () {
     }
   }
 
-  $("#open-resume").on("click", function () {
-    $("#resume-holder").fadeIn();
-    $("body").addClass("overflow-hidden");
+  $(document).ready(function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var resumeUrl = urlParams.get("resume");
+    var contactUrl = urlParams.get("contact");
+    
+    if (resumeUrl) {
+      openPopup("resume", resumeUrl);
+    }
+    
+    if (contactUrl) {
+      openPopup("contact", contactUrl);
+    }
   });
-
-  $(".go-back").on("click", function () {
+  
+  function openPopup(type, url) {
+    var popupId = "#" + type + "-holder";
+    var iframeId = "#" + type + "-iframe";
+    
+    $(iframeId).attr("src", url);
+    $(popupId).fadeIn();
+    $("body").addClass("overflow-hidden");
+    history.replaceState({}, "", window.location.pathname); // Remove the query parameter from the URL
+    
+    var popupLinkUrl =
+      window.location.href.split("?")[0] +
+      "?" +
+      type +
+      "=" +
+      encodeURIComponent(url);
+    history.pushState({}, "", popupLinkUrl); // Update the URL with the popup link
+  }
+  
+  $("#open-resume").on("click", function(e) {
+    e.preventDefault(); // Prevent the default link behavior
+    var resumeUrl = "./Resume/resume.html"; // Change this to the actual URL of your resume file
+    openPopup("resume", resumeUrl);
+  });
+  
+  $("#link").on("click", function(e) {
+    e.preventDefault(); // Prevent the default link behavior
+    var resumeUrl = $(this).attr("href");
+    openPopup("resume", resumeUrl);
+  });
+  
+  $("#open-contact").on("click", function(e) {
+    e.preventDefault(); // Prevent the default link behavior
+    var contactUrl = "./Contact/contact.html"; // Change this to the actual URL of your contact file
+    openPopup("contact", contactUrl);
+  });
+  
+  $("#open-contact2").on("click", function(e) {
+    e.preventDefault(); // Prevent the default link behavior
+    var contactUrl = "./Contact/contact.html"; // Change this to the actual URL of your contact file
+    openPopup("contact", contactUrl);
+  });
+  
+  $(".go-back").on("click", function() {
     $(".popup").fadeOut();
     $("body").removeClass("overflow-hidden");
+    history.replaceState({}, "", window.location.pathname); // Remove the query parameter from the URL
   });
-
-  $("#open-contact").on("click", function () {
-    $("#contact-holder").fadeIn();
-    $("body").addClass("overflow-hidden");
-  });
-
-  $(".go-back").on("click", function () {
-    $(".popup").fadeOut();
-    $("body").removeClass("overflow-hidden");
-  });
-
-  $("#open-contact2").on("click", function () {
-    $("#contact-holder").fadeIn();
-    $("body").addClass("overflow-hidden");
-  });
-
-  $(".go-back").on("click", function () {
-    $(".popup").fadeOut();
-    $("body").removeClass("overflow-hidden");
-  });
+  
 });
 
 function getYoutubeVideoId(url) {
@@ -278,5 +311,74 @@ $(document).on(
     }
   }
 );
+
+function scrollToBottom() {
+  console.log(1);
+  window.scrollTo({
+    top: 5500,
+    behavior: 'smooth'
+  });
+}
+
+function closeMenu() {
+  var element = document.getElementById("mobile__menu");
+  element.classList.remove("overlay--active");
+  document.body.classList.remove("disable-scroll");
+}
+
+
+function disableScroll() {
+  $("body").addClass("disable-scroll");
+  console.log("Scroll disabled");
+}
+
+function contactForm() {
+  $("#contact-holder").fadeIn();
+  $("body").addClass("overflow-hidden");
+
+  // Update URL
+  var url = window.location.href.split("#")[0] + "#contact";
+  history.pushState(null, null, url);
+}
+
+function goBack() {
+  $(".popup").fadeOut();
+  $("body").removeClass("overflow-hidden");
+
+  // Update URL
+  var url = window.location.href.split("#")[0];
+  history.pushState(null, null, url);
+}
+
+// Show contact form if URL has #contact fragment
+function handleInitialURL() {
+  var url = window.location.href;
+  if (url.indexOf("#contact") !== -1) {
+    contactForm();
+  }
+}
+
+$(document).ready(function() {
+  $(".menua.cta").on("click", function() {
+    disableScroll();
+  });
+
+  $(".close").on("click", function() {
+    closeMenu();
+  });
+
+  $("#progetti1").on("click", function() {
+    contactForm();
+    return false;
+  });
+
+  $(".go-back").on("click", function() {
+    goBack();
+  });
+
+  // Handle initial URL
+  handleInitialURL();
+});
+
 
 //finished
