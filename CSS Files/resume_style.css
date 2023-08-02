@@ -7,7 +7,7 @@
     text-decoration: none;
     outline: none;
     border: none;
-    text-transform: capitalize;
+    
   }
   
   html {
@@ -199,14 +199,26 @@
     margin-bottom: 1rem;
   }
 
-  .skills .box-container .box:nth-child(14) img {
-    height: 13rem;
-    width: 13rem;
-    margin-bottom: 0.5rem;
+  .skills .box-container .box:nth-child(7) img, 
+  .skills .box-container .box:nth-child(8) img,
+  .skills .box-container .box:nth-child(13) img,
+  .skills .box-container .box:nth-child(14) img,
+  .skills .box-container .box:nth-child(15) img,
+  .skills .box-container .box:nth-child(16) img,
+  .skills .box-container .box:nth-child(19) img,
+  .skills .box-container .box:nth-child(21) img {
+    margin-bottom: 2rem;
   }
 
-  .skills .box-container .box:nth-child(11) img,  .skills .box-container .box:nth-child(12) img {
-    margin-bottom: 3rem;
+  .skills .box-container .box:nth-child(7) h3, .skills .box-container .box:nth-child(8) h3 {
+    font-size: 2rem;
+  }
+
+  .skills .box-container .box:nth-child(22) img {
+    position: relative;
+    justify-content: center;
+    left: -5px;
+    margin-bottom: 2rem;
   }
   
   .skills .box-container .box h3 {
