@@ -132,6 +132,59 @@
   display: flex;
 }
 
+.icons{
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 0;
+  
+}
+.icons li{
+  list-style-type: none;
+  background: #fff;
+  color: rgb(0, 0, 0);
+  width: 40px;
+  height: 40px;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  
+}
+.icons li:hover{
+  background: #d0fdce;
+  color: #000;
+}
+.icons a:after {
+  display: none;
+}
+.icons button{
+  background: transparent;
+  border: 0;
+}
+.icons a {
+  color: inherit;
+}
+.text-envelope{
+  color: #000000;
+}
+.jam--fiverr {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2.5 -2 24 24'%3E%3Cg fill='%23000'%3E%3Cpath d='M16.25 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H10V0H8.125A5.632 5.632 0 0 0 2.5 5.625v.625H0V10h2.5v6.25H0V20h8.75v-3.75h-2.5V10h6.285v6.25H10V20h8.75v-3.75z'/%3E%3Ccircle cx='14.375' cy='1.875' r='1.875'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
 @media only screen and (max-width: 1300px){
   #container-all-section {
     clip-path: polygon(100% 0, 100% 21%, 100% 33%, 100% 90%, 41% 96%, 0 100%, 0 0);
