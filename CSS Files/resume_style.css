@@ -289,12 +289,16 @@
     top: -1rem;
     left: -2.5rem;
   }
+
+  .education .box-container .box a h3:hover{
+    color: rgb(0, 208, 255); /* Change this to any color you prefer */
+  }
   
   .education .box-container .box span {
     font-size: 1.7rem;
     color: #fff;
     border-radius: 5rem;
-    padding: .5rem 1.5rem;
+    padding: .8rem 2rem;
     background: #1a1a1a;
   }
   
