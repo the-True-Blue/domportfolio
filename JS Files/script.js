@@ -100,6 +100,17 @@ $(document).ready(function () {
     image: popUpImageOptions,
   });
 
+  if (window.location.hash) {
+    const imageId = window.location.hash.substring(1);
+    const imageLink = $("#carousel2 .lightbox-link#" + imageId);
+
+    if (imageLink.length > 0) {
+      setTimeout(function() {
+        imageLink.magnificPopup('open');
+      }, 500); // Adjust the delay as needed
+    }
+  }
+
   $("#carousel3 .lightbox-link").magnificPopup({
     type: "image",
     gallery: { enabled: true },
@@ -197,14 +208,7 @@ $(document).ready(function () {
     }
   }
 
-  if (window.location.hash) {
-    const imageId = window.location.hash.substring(1);
-    const imageLink = $("#" + imageId);
 
-    if (imageLink.length > 0) {
-      imageLink.trigger("click");
-    }
-  }
 
   $(document).ready(function() {
     var urlParams = new URLSearchParams(window.location.search);
