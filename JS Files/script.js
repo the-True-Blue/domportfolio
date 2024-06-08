@@ -166,6 +166,12 @@ $(document).ready(function () {
       "iframe.mfp-iframe"
     );
 
+    if (window.location.hash === '#carousel2') {
+      setTimeout(function() {
+        $('#carousel2 .lightbox-link').first().magnificPopup('open');
+      }, 500); // Adjust the delay as needed
+    }
+
     videoElement.on("load", function () {
       $.magnificPopup.instance.content
         .find(".mfp-title")
