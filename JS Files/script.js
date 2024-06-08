@@ -100,36 +100,38 @@ $(document).ready(function () {
     image: popUpImageOptions,
   });
 
+  // Check URL hash and trigger lightbox for images
   if (window.location.hash) {
     const imageId = window.location.hash.substring(1);
     const imageLink = $("#carousel2 .lightbox-link#" + imageId);
 
     if (imageLink.length > 0) {
       setTimeout(function() {
-        $.magnificPopup.open({
-          items: {
-            src: imageLink.attr('href')
-          },
-          type: 'image',
-          gallery: {
-            enabled: true
-          },
-          callbacks: {
-            open: function() {
-              $('.mfp-wrap').scrollTop(imageLink.position().top);
-            }
-          }
-        });
+        // Use owlCarousel to go to the specific item
+        const owl = $(".owl-carousel").data('owl.carousel');
+        const itemIndex = $("#carousel2 .lightbox-link").index(imageLink);
+        owl.to(itemIndex);
+
+        // Open the lightbox after navigating to the correct item
+        imageLink.click();
       }, 500); // Adjust the delay as needed
     }
   } else {
+    // Default to open the image with id "space3"
     const defaultImageLink = $("#space3");
     if (defaultImageLink.length > 0) {
       setTimeout(function() {
-        defaultImageLink.click(); // Trigger a click event to open the lightbox
+        // Use owlCarousel to go to the specific item
+        const owl = $(".owl-carousel").data('owl.carousel');
+        const itemIndex = $("#carousel2 .lightbox-link").index(defaultImageLink);
+        owl.to(itemIndex);
+
+        // Open the lightbox after navigating to the correct item
+        defaultImageLink.click();
       }, 500); // Adjust the delay as needed
     }
   }
+
 
   $("#carousel3 .lightbox-link").magnificPopup({
     type: "image",
