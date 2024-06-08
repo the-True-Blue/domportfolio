@@ -106,7 +106,27 @@ $(document).ready(function () {
 
     if (imageLink.length > 0) {
       setTimeout(function() {
-        imageLink.magnificPopup('open');
+        $.magnificPopup.open({
+          items: {
+            src: imageLink.attr('href')
+          },
+          type: 'image',
+          gallery: {
+            enabled: true
+          },
+          callbacks: {
+            open: function() {
+              $('.mfp-wrap').scrollTop(imageLink.position().top);
+            }
+          }
+        });
+      }, 500); // Adjust the delay as needed
+    }
+  } else {
+    const defaultImageLink = $("#space3");
+    if (defaultImageLink.length > 0) {
+      setTimeout(function() {
+        defaultImageLink.click(); // Trigger a click event to open the lightbox
       }, 500); // Adjust the delay as needed
     }
   }
