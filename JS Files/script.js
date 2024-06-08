@@ -166,12 +166,6 @@ $(document).ready(function () {
       "iframe.mfp-iframe"
     );
 
-      // Check URL hash and trigger lightbox
-  if (window.location.hash === '#carousel2') {
-    setTimeout(function() {
-      $('#space3-link').click();
-    }, 500); // Adjust the delay as needed
-  }
 
     videoElement.on("load", function () {
       $.magnificPopup.instance.content
@@ -200,6 +194,15 @@ $(document).ready(function () {
 
     if (videoLink.length > 0) {
       videoLink.trigger("click");
+    }
+  }
+
+  if (window.location.hash) {
+    const imageId = window.location.hash.substring(1);
+    const imageLink = $("#carousel2 .lightbox-link#" + imageId);
+
+    if (imageLink.length > 0) {
+      imageLink.trigger("click");
     }
   }
 
