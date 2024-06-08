@@ -199,7 +199,7 @@ $(document).ready(function () {
 
   if (window.location.hash) {
     const imageId = window.location.hash.substring(1);
-    const imageLink = $("#carousel2 .lightbox-link#" + imageId);
+    const imageLink = $("#" + imageId);
 
     if (imageLink.length > 0) {
       imageLink.trigger("click");
