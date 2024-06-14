@@ -116,21 +116,7 @@ $(document).ready(function () {
         imageLink.click();
       }, 500); // Adjust the delay as needed
     }
-  } else {
-    // Default to open the image with id "space3"
-    const defaultImageLink = $("#space3");
-    if (defaultImageLink.length > 0) {
-      setTimeout(function() {
-        // Use owlCarousel to go to the specific item
-        const owl = $(".owl-carousel").data('owl.carousel');
-        const itemIndex = $("#carousel2 .lightbox-link").index(defaultImageLink);
-        owl.to(itemIndex);
-
-        // Open the lightbox after navigating to the correct item
-        defaultImageLink.click();
-      }, 500); // Adjust the delay as needed
-    }
-  }
+  } 
 
 
   $("#carousel3 .lightbox-link").magnificPopup({
